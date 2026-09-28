@@ -1,0 +1,98 @@
+/* frontend/src/pages/MovieDetail.css – Live Motion Dark Theme */
+.movie-detail-page { padding-top: 70px; }
+
+.detail-banner {
+  background-size: cover; background-position: center top;
+  position: relative; min-height: 500px;
+  display: flex; align-items: flex-end;
+}
+.detail-banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6,6,16,1) 0%, rgba(6,6,16,0.7) 40%, rgba(6,6,16,0.3) 100%);
+}
+.detail-banner-content { position: relative; z-index: 1; padding-bottom: 48px; }
+.detail-main { display: flex; gap: 40px; align-items: flex-end; }
+.detail-poster {
+  width: 170px; flex-shrink: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  border: 1.5px solid var(--border-light);
+}
+.detail-info { flex: 1; padding-bottom: 8px; }
+.detail-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.detail-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 900; letter-spacing: -1px;
+  margin-bottom: 12px; line-height: 1.1;
+}
+.detail-rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.detail-rating-num { font-size: 20px; font-weight: 700; color: var(--gold); }
+.detail-tags { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+.detail-description { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; max-width: 560px; }
+
+/* Date */
+.date-row { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 24px; }
+.date-pill {
+  padding: 10px 20px; border-radius: var(--radius);
+  background: var(--glass); border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 13px; font-weight: 500;
+  cursor: pointer; white-space: nowrap; transition: all 0.2s;
+}
+.date-pill:hover { border-color: var(--accent); color: var(--accent); }
+.date-pill.active { background: var(--accent-gradient); color: #fff; border-color: transparent; }
+
+/* Theatre card */
+.theatre-card { padding: 20px 24px; margin-bottom: 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.theatre-header { margin-bottom: 16px; }
+.theatre-name { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.theatre-location { font-size: 13px; color: var(--text-secondary); margin-bottom: 2px; }
+.theatre-facilities { font-size: 12px; color: var(--text-muted); }
+.show-times { display: flex; gap: 12px; flex-wrap: wrap; }
+.show-time-btn {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 12px 20px; border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  cursor: pointer; transition: all 0.25s;
+  gap: 4px; min-width: 90px;
+}
+.show-time-btn:hover { border-color: var(--accent); background: rgba(255,45,85,0.1); transform: translateY(-2px); }
+.show-time { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.show-price { font-size: 12px; color: var(--success); font-weight: 600; }
+.show-screen { font-size: 11px; color: var(--text-muted); }
+
+/* Reviews */
+.review-form { padding: 20px 24px; margin-bottom: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.review-stars-select { display: flex; align-items: center; margin-bottom: 14px; }
+.star-btn {
+  font-size: 28px; background: none; border: none; cursor: pointer;
+  color: var(--border-light); transition: color 0.15s; line-height: 1;
+}
+.star-btn.active { color: var(--gold); }
+.star-btn:hover { color: var(--gold); transform: scale(1.2); }
+.review-textarea { resize: vertical; min-height: 80px; }
+
+.reviews-list { display: flex; flex-direction: column; gap: 16px; }
+.review-card { padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--accent-gradient);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #fff; font-size: 16px; flex-shrink: 0;
+}
+.review-name { font-weight: 600; font-size: 14px; }
+.review-date { font-size: 12px; color: var(--text-muted); }
+.review-rating-badge {
+  margin-left: auto; background: rgba(255,215,0,0.15);
+  border: 1px solid rgba(255,215,0,0.3); color: var(--gold);
+  padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+}
+.review-comment { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 10px; }
+
+@media (max-width: 768px) {
+  .detail-main { flex-direction: column; align-items: center; text-align: center; }
+  .detail-poster { width: 160px; }
+  .detail-rating-row, .detail-tags { justify-content: center; }
+}

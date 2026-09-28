@@ -1,0 +1,47 @@
+/* frontend/src/pages/Admin.css – Live Motion Dark Theme */
+.admin-page {
+  display: flex; min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 220px; flex-shrink: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  position: sticky; top: 70px; height: calc(100vh - 70px); overflow-y: auto;
+}
+.admin-logo {
+  font-weight: 800; font-size: 16px; margin-bottom: 24px;
+  padding: 12px 14px; color: var(--accent);
+  font-family: 'Outfit', sans-serif;
+}
+.admin-tab {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 11px 14px; border-radius: var(--radius);
+  background: none; border: none; cursor: pointer;
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  text-align: left; transition: all 0.2s; margin-bottom: 4px;
+}
+.admin-tab:hover { background: var(--glass); color: var(--text-primary); }
+.admin-tab.active { background: rgba(255,45,85,0.12); color: var(--accent); font-weight: 600; }
+
+.admin-content { flex: 1; padding: 32px; overflow-x: hidden; }
+.admin-page-title { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; margin-bottom: 24px; }
+.admin-table-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 32px; }
+.stat-card {
+  padding: 24px 20px; text-align: center; transition: all 0.3s;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+}
+.stat-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--glow-accent); }
+.stat-icon { font-size: 36px; margin-bottom: 10px; }
+.stat-value { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 6px; color: var(--accent); }
+.stat-label { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .admin-sidebar { width: 60px; }
+  .admin-sidebar .admin-logo, .admin-tab span { display: none; }
+  .admin-tab { justify-content: center; padding: 11px; font-size: 20px; }
+  .admin-content { padding: 20px; }
+}
